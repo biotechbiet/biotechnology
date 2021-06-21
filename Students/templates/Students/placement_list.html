@@ -1,0 +1,28 @@
+{% extends 'core/base.html'%}
+{% load static %} 
+{% block content %}
+    <h2 class="my-4">Placements</h2>
+    <div class="container">
+        {% for s,o in placement_list.items %}
+        <table class="table table-bordered table-sm text-center">
+          <h5 class="mb-3">Session : {{s}}</h5>
+          <thead>
+            <tr>
+              <th scope="col"><p>S.No</p></th>
+              <th scope="col"><p>Student Name</p></th>
+              <th scope="col"><p>Company Name</p></th>
+              <!-- <th scope="col"><p>Session</p></th> -->
+            </tr>
+          </thead>
+          <tbody>
+            {% for stu in o %}
+            <tr>
+              <th scope="row"><p>{{ forloop.counter }}</p></th>
+              <td><p>{{stu.stu_name}}</p></td>
+              <td><p>{{stu.company_name}}</p></td>
+            </tr>
+            {% endfor %} {% endfor %}
+          </tbody>
+        </table>
+      </div>
+{% endblock content %}

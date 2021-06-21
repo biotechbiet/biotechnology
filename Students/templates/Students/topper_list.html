@@ -1,0 +1,29 @@
+{% extends 'core/base.html'%} {% load static %} {% block content %}
+<h2 style="text-align: center" class="m-4">Topper List</h2>
+<div class="container">
+  {% for s,o in toppers.items %}
+  <table class="table table-bordered table-sm text-center">
+    <h5 class="mb-3">Session : {{s}}</h5>
+    <thead>
+      <tr>
+        <th scope="col"><p>Rank</p></th>
+        <th scope="col"><p>Name</p></th>
+        <th scope="col"><p>Percentage</p></th>
+        <th scope="col"><p>Year</p></th>
+        <!-- <th scope="col"><p>Session</p></th> -->
+      </tr>
+    </thead>
+    <tbody>
+      {% for stu in o %}
+      <tr>
+        <th scope="row"><p>{{stu.stu_rank}}</p></th>
+        <td><p>{{stu.stu_name}}</p></td>
+        <td><p>{{stu.stu_percentage}}</p></td>
+        <td><p>{{stu.stu_year}}</p></td>
+        <!-- <td><p>{{stu.session}}</p></td> -->
+      </tr>
+      {% endfor %} {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock content %}

@@ -1,0 +1,30 @@
+  .nav-item {
+    border-right: 1px solid silver;
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+  /* nav item hover drop down */
+  .dropdown:hover>.dropdown-menu {
+    display: block;
+  }
+
+  .dropdown>.dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+    pointer-events: none;
+  }
+
+  h2 {
+    font-size: min(max(1.2rem, 3vw), 2.1rem);
+    color: #007bff;
+    text-align: center;
+  }
+
+  h5 {
+    font-size: min(max(1.0rem, 2vw), 1.5rem);
+    color: #8B0000;
+    text-align: justify;
+  }
+
+  p,a{
+    font-size: min(max(0.8rem, 1.7vw), 1.2rem);
+  }

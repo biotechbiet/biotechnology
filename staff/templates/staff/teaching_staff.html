@@ -1,0 +1,24 @@
+{% extends 'core/base.html'%} {% load static %} {% block content %}
+<h2 class="my-4">Teaching Staff</h2>
+<div class="row">
+  {% for o in teaching_staff %}
+  <div class="col-sm-6">
+    <div class="card border-0">
+      <div class="card-body text-center">
+        <img
+          class="img-fluid rounded-circle mx-auto d-block"
+          src="{{o.profile_pic.url}}"
+          alt="{{o.profile_pic}}"
+          height="200px"
+          width="200px"
+        />
+        <h5 class="card-title text-center">{{o.name}}</h5>
+        <p class="card-text">Designation: {{o.designation}}</p>
+        <p class="card-text">Qualification: {{o.qualification}}</p>
+        <p>Area of Interest: {{o.area_of_interest}}</p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock content %}

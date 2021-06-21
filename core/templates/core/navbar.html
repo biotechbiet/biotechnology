@@ -1,0 +1,89 @@
+{% load static %}
+<!-- nav bar -->
+<nav
+class="navbar navbar-expand-lg navbar-dark"
+style="background-color: #563d7c"
+>
+<a class="navbar-brand" href="{% url 'home'%}">BioTechnology</a>
+<button
+  class="navbar-toggler"
+  type="button"
+  data-toggle="collapse"
+  data-target="#navbarNavDropdown"
+  aria-controls="navbarNavDropdown"
+  aria-expanded="false"
+  aria-label="Toggle navigation"
+>
+  <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNavDropdown">
+  <ul class="navbar-nav mx-auto">
+    <li class="nav-item {{home_active}}">
+      <a class="nav-link" href="{% url 'home'%}"
+        >Home <span class="sr-only">(current)</span></a
+      >
+    </li>
+    <li class="nav-item dropdown {{staff_active}}">
+      <a
+        class="nav-link dropdown-toggle"
+        href="#"
+        id="navbarDropdownMenuLink"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        Staff
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <a class="dropdown-item" href="{% url 'teaching_staff' %}">Teaching Staff</a>
+        <a class="dropdown-item" href="{% url 'supporting_staff' %}">Supporting Staff</a>
+      </div>
+    </li>
+    <li class="nav-item dropdown {{students_active}}">
+      <a
+        class="nav-link dropdown-toggle"
+        href="#"
+        id="navbarDropdownMenuLink"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        Students
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <a class="dropdown-item" href="{% url 'topper_list' %}">Toppers list</a>
+        <a class="dropdown-item" href="{% url 'project_list' %}">Student Project</a>
+        <a class="dropdown-item" href="{% url 'placement_list' %}">Placement</a>
+        <!-- <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Alumni Registration</a>
+        <a class="dropdown-item" href="#">Alumni Details</a> -->
+      </div>
+    </li>
+    <li class="nav-item {{publication_active}}">
+      <a class="nav-link" href="#">Publication</a>
+    </li>
+    <li class="nav-item dropdown {{learning_resources_active}}">
+      <a
+        class="nav-link dropdown-toggle"
+        href="#"
+        id="navbarDropdownMenuLink"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        Learning Resources
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <a class="dropdown-item" href="#">Notes</a>
+        <a class="dropdown-item" href="#">Videos</a>
+        <a class="dropdown-item" href="#">Videos</a>
+        <a class="dropdown-item" href="#">Other Useful links</a>
+        <a class="dropdown-item" href="#"
+          >Previous year Question Papers</a
+        >
+        <a class="dropdown-item" href="#">Useful Formats</a>
+      </div>
+    </li>
+  </ul>
+</div>
+</nav>

@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- title icon -->
+    <link rel="icon" href="{% static 'core/images/titlelogo.png'%}" type="image/icon type" />
+    <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="{% static 'core/css/bootstrap4.css'%}">
+    <!-- core css -->
+    <link rel="stylesheet" href="{% static 'core/css/base.css'%}">
+    <title>Department of Biotechnology</title>
+  </head>
+  <body>
+    <!-- logo -->
+    <div >
+      <div class="text-center">
+        <img class="img-fluid" src="{% static 'core/images/logo.png' %}" alt="logo" />
+      </div>
+    </div>
+    <!-- navbar -->
+    {% include 'core/navbar.html'%}
+    {% block content %}
+    
+     {% endblock content %}
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'core/js/jquery.js' %}"></script>
+    <script src="{% static 'core/js/popper.js' %}"></script>
+    <script src="{% static 'core/js/fontawesome.js' %}"></script>
+    <script src="{% static 'core/js/bootstrap4.js' %}"></script>
+  </body>
+</html>
