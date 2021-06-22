@@ -23,7 +23,7 @@ class topper_list(models.Model):
 
 class project_list(models.Model):
     session = CharField(max_length=9)
-    file = FileField()
+    file = FileField(upload_to='project_file/')
 
 class placement_list(models.Model):
     stu_name=CharField(max_length=70)

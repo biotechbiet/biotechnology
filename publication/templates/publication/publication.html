@@ -2,8 +2,9 @@
 {% load static %} 
 {% block content %}
 <h2 class="my-4">Individual Publication Details</h2>
-{% for o in publication_object %}
-<iframe src="{{o.publication_file.url}}#toolbar=0" width="100%" height="500px">
-<a class="btn btn-primary" href="{{o.publication_file.url}}" role="button">Link</a>
+<div class="text-center">
+    {% for o in publication_object %}
+<iframe src="{{o.publication_file.url}}#toolbar=0" width="100%" height="750px" >
 {% endfor %}
+</div>
 {% endblock content %}

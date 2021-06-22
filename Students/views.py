@@ -14,7 +14,7 @@ def toppers_list(request):
     return render(request,'Students/topper_list.html',{'toppers':topper,'students_active':'active'})
 
 def projects_list(request):
-    pro_list=project_list.objects.all()
+    pro_list=reversed(project_list.objects.all())
     return render(request,'Students/project_list.html',{'project_list':pro_list,'students_active':'active'})
     
 def placements_list(request):

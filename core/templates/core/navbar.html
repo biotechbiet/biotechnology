@@ -1,7 +1,7 @@
 {% load static %}
 <!-- nav bar -->
 <nav
-class="navbar navbar-expand-lg navbar-dark"
+class="navbar navbar-expand-lg sticky-top navbar-dark"
 style="background-color: #563d7c"
 >
 <a class="navbar-brand" href="{% url 'home'%}">BioTechnology</a>
@@ -74,14 +74,12 @@ style="background-color: #563d7c"
         Learning Resources
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-        <a class="dropdown-item" href="#">Notes</a>
-        <a class="dropdown-item" href="#">Videos</a>
-        <a class="dropdown-item" href="#">Videos</a>
-        <a class="dropdown-item" href="#">Other Useful links</a>
-        <a class="dropdown-item" href="#"
+        <a class="dropdown-item" href="{% url 'video_url' %}">Videos</a>
+        <a class="dropdown-item" href="{% url 'usefull_format_url' %}">Useful Formats</a>
+        <a class="dropdown-item" href="{% url 'usefull_link_url' %}">Other Useful links</a>
+        <a class="dropdown-item" href="{% url 'question_paper_url' %}"
           >Previous year Question Papers</a
-        >
-        <a class="dropdown-item" href="#">Useful Formats</a>
+        > 
       </div>
     </li>
   </ul>

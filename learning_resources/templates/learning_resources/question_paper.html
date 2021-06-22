@@ -1,0 +1,17 @@
+{% extends 'core/base.html'%}
+{% load static %}
+{% block content %}
+<div class="container">
+    <h2 class="text-center my-4">Previous Years Question paper</h2>
+    {% for o in question_paper_objects %}
+    <div class="row border-top">
+      <div class="col-8 py-2">
+        <p class="">{{ forloop.counter }}. {{o.question_paper_title}}</p>
+      </div>
+      <div class="col-4 py-2">
+        <a class="btn btn-primary btn-block" href="{{o.question_paper_file.url}}" role="button" download>Download</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+{% endblock %}

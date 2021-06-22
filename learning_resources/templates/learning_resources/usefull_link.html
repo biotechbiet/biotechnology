@@ -1,0 +1,17 @@
+{% extends 'core/base.html'%}
+{% load static %}
+{% block content %}
+<div class="container">
+    <h2 class="text-center my-4">Use full links</h2>
+    {% for o in usefull_link_objects %}
+    <div class="row border-top">
+      <div class="col-9 py-2">
+        <p class="">{{ forloop.counter }}. {{o.link_title}}</p>
+      </div>
+      <div class="col-3 py-2">
+        <a class="btn btn-primary btn-block" href="{{o.link_url}}" role="button">Visit</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+{% endblock %}

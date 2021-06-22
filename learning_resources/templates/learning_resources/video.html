@@ -1,0 +1,18 @@
+{% extends 'core/base.html'%}
+{% load static %}
+{% block content %}
+<div class="container">
+    <h2 class="text-center my-4">Videos</h2>
+    {% for o in video_objects %}
+    <div class="row border-top">
+      <div class="col-9 py-2">
+        <p class="">{{ forloop.counter }}. {{o.video_title}}</p>
+      </div>
+      <div class="col-3 py-2">
+        <a class="btn btn-primary btn-block" href="{{o.video_url}}" role="button">Watch</a>
+      </div>
+    </div>
+  
+    {% endfor %}
+  </div>
+{% endblock %}
