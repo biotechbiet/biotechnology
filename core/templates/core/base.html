@@ -10,10 +10,15 @@
     />
     <!-- title icon -->
     <link rel="icon" href="{% static 'core/images/titlelogo.png'%}" type="image/icon type" />
+    <link rel="stylesheet" href="{% static 'core/css/fontawesome.css'%}">
     <!-- Bootstrap CSS -->
      <link rel="stylesheet" href="{% static 'core/css/bootstrap4.css'%}">
+    
     <!-- core css -->
     <link rel="stylesheet" href="{% static 'core/css/base.css'%}">
+    {% block css %}
+    
+     {% endblock css %}
     <title>Department of Biotechnology</title>
   </head>
   <body>
@@ -32,7 +37,10 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="{% static 'core/js/jquery.js' %}"></script>
     <script src="{% static 'core/js/popper.js' %}"></script>
-    <script src="{% static 'core/js/fontawesome.js' %}"></script>
     <script src="{% static 'core/js/bootstrap4.js' %}"></script>
+    <script src="{% static 'core/js/fontawesome.js' %}"></script>
+    {% block js %}
+    
+    {% endblock js %}
   </body>
 </html>
