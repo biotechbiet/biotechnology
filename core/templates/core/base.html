@@ -9,38 +9,42 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <!-- title icon -->
-    <link rel="icon" href="{% static 'core/images/titlelogo.png'%}" type="image/icon type" />
-    <link rel="stylesheet" href="{% static 'core/css/fontawesome.css'%}">
+    <link
+      rel="icon"
+      href="{% static 'core/images/titlelogo.png'%}"
+      type="image/icon type"
+    />
+    <link rel="stylesheet" href="{% static 'core/css/fontawesome.css'%}" />
     <!-- Bootstrap CSS -->
-     <link rel="stylesheet" href="{% static 'core/css/bootstrap4.css'%}">
-    
+    <link rel="stylesheet" href="{% static 'core/css/bootstrap4.css'%}" />
+
     <!-- core css -->
-    <link rel="stylesheet" href="{% static 'core/css/base.css'%}">
-    {% block css %}
-    
-     {% endblock css %}
+    <link rel="stylesheet" href="{% static 'core/css/base.css'%}" />
+    {% block css %} {% endblock css %}
     <title>Department of Biotechnology</title>
   </head>
   <body>
     <!-- logo -->
-    <div >
+    <div>
       <div class="text-center">
-        <img class="img-fluid" src="{% static 'core/images/logo.png' %}" alt="logo" />
+        <img
+          class="img-fluid"
+          src="{% static 'core/images/logo.png' %}"
+          alt="logo"
+        />
       </div>
     </div>
     <!-- navbar -->
-    {% include 'core/navbar.html'%}
-    {% block content %}
-    
-     {% endblock content %}
+    {% include 'core/navbar.html'%} {% block content %} {% endblock content %}
+
+    {% include 'core/footer.html'%}
+  
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="{% static 'core/js/jquery.js' %}"></script>
     <script src="{% static 'core/js/popper.js' %}"></script>
     <script src="{% static 'core/js/bootstrap4.js' %}"></script>
     <script src="{% static 'core/js/fontawesome.js' %}"></script>
-    {% block js %}
-    
-    {% endblock js %}
+    {% block js %} {% endblock js %}
   </body>
 </html>

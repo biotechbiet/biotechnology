@@ -91,18 +91,11 @@
         <div class="card-body">
           <h5 class="card-title text-center p-4">News & Announcements</h5>
           <marquee direction="up">
+            {% for o in announcement_objects %}
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio
-              vitae qui est incidunt nulla quo eveniet asperiores. Quam numquam
-              aliquam consequuntur fugiat quo. Facilis, nesciunt. Sapiente
-              facere sint eveniet assumenda.
+              {{o.date}} : {{o.description}}
             </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
-              reprehenderit soluta laborum a nam ea culpa adipisci, provident
-              dolorem amet perferendis aliquid numquam illum iste officia vel
-              officiis fugiat ratione?
-            </p>
+            {% endfor %}
           </marquee>
         </div>
       </div>
@@ -180,70 +173,6 @@
     {% endfor %}
   </section>
 </div>
-<footer class="bg-dark text-white text-lg-start">
-  <!-- Grid container -->
-  <div class="container-fluid p-4">
-    <!--Grid row-->
-    <div class="row mx-1">
-      <!--Grid column-->
-      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-        <h5 class="text-uppercase text-white">Contact US</h5>
-
-        <p class="text-white">
-          Department of Biotechnology, Bansal Institute of Engineering and
-          Technology ,Lucknow, UP     
-        </p>
-        <p class="text-white"><i class="fas fa-phone-alt"></i> 8755322124, 9839127751, 7388071055</p>
-        <p class="text-white"><i class="far fa-envelope-open"></i> hodbt@bansaliet.in</p>
-        <p class="text-white"><i class="fas fa-clock"></i> Mon-Sat 9:00 AM-4:30 PM </p>
-      </div>
-      <!--Grid column-->
-
-      <!--Grid column-->
-      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-        <h5 class="text-uppercase text-white">Quick Links</h5>
-
-        <ul class="list-unstyled mb-0">
-          <li>
-            <a href="#!" class="text-white">Home</a>
-          </li>
-          <li>
-            <a href="#!" class="text-white">Products</a>
-          </li>
-          <li>
-            <a href="#!" class="text-white">Staff</a>
-          </li>
-          <li>
-            <a href="#!" class="text-white">Students</a>
-          </li>
-          <li>
-            <a href="#!" class="text-white">Publication </a>
-          </li>
-          <li>
-            <a href="#!" class="text-white">Learning Resources</a>
-          </li>
-        </ul>
-      </div>
-      <!--Grid column-->
-      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-        <h5 class="text-uppercase mb-0 text-white">Follow US</h5>
-         <!-- Facebook -->
-         <div class="embed-responsive embed-responsive-16by9">
-          <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fbtbansal%2F&tabs=timeline&width=300&height=250px&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="300px" height="200px" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-         </div>
-      </div>
-      <!--Grid column-->
-    </div>
-    <!--Grid row-->
-  </div>
-  <!-- Grid container -->
-
-  <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-    © 2021 Copyright: BIET Lucknow
-  </div>
-  <!-- Copyright -->
-</footer>
 {% block js %}
 <script src="{% static 'core/js/index.js' %}"></script>
 <script src="{% static 'core/js/slick-carousel.js' %}"></script>
