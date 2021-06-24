@@ -1,5 +1,6 @@
 {% extends 'core/base.html'%} {% load static %} {% block content %}
-<h2 class="my-4">Teaching Staff</h2>
+<div style="min-height: 500px;">
+  <h2 class="my-4">Teaching Staff</h2>
 <div class="row">
   {% for o in teaching_staff %}
   <div class="col-sm-6">
@@ -20,5 +21,6 @@
     </div>
   </div>
   {% endfor %}
+</div>
 </div>
 {% endblock content %}

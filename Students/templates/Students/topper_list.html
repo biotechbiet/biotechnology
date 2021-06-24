@@ -1,6 +1,6 @@
 {% extends 'core/base.html'%} {% load static %} {% block content %}
 <h2 style="text-align: center" class="m-4">Topper List</h2>
-<div class="container">
+<div class="container" style="min-height: 500px;">
   {% for s,o in toppers.items %}
   <table class="table table-bordered table-sm text-center">
     <h5 class="mb-3">Session : {{s}}</h5>
