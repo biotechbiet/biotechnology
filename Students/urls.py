@@ -6,5 +6,6 @@ urlpatterns = [
     path('topper-list/',views.toppers_list,name='topper_list'),
     path('project-list/',views.projects_list,name='project_list'),
     path('placements/',views.placements_list,name='placement_list'),
+    path('enews-magazine/',views.enews_magazine_views,name='enews_magazine_url')
 ]
 urlpatterns +=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

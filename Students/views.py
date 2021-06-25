@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import topper_list,project_list,placement_list
+from .models import topper_list,project_list,placement_list,eNews_magazine
 # Create your views here.
 def toppers_list(request):
     top_list=topper_list.objects.all()
@@ -28,3 +28,15 @@ def placements_list(request):
     for i in all_sessions:
         placements[i]=placement_list.objects.all().filter(session=i)
     return render(request,'Students/placement_list.html',{'placement_list':placements,'students_active':'active'})
+
+def enews_magazine_views(request):
+    eNews_magazine_objects=eNews_magazine.objects.all()
+    all_objects=set()
+    for i in eNews_magazine_objects:
+        all_objects.add(i.session)
+    all_objects=list(all_objects)
+    all_objects.sort(reverse=True)
+    eNews_magazine_context={}
+    for i in all_objects:
+        eNews_magazine_context[i]=eNews_magazine.objects.filter(session=i)
+    return render(request,'Students/eNews_magazine.html',{'eNews_magazine_active':'active','eNews_magazine_objects':eNews_magazine_context})

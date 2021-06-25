@@ -29,3 +29,8 @@ class placement_list(models.Model):
     stu_name=CharField(max_length=70)
     company_name=CharField(max_length=120)
     session=CharField(max_length=9)
+
+class eNews_magazine(models.Model):
+    title=CharField(max_length=500)
+    session=CharField(max_length=9)
+    file=FileField(upload_to='eNews_Magazine/')

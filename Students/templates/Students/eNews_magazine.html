@@ -1,0 +1,19 @@
+{% extends 'core/base.html'%} {% load static %} {% block content %}
+<div class="container" style="min-height: 500px;">
+  <h2 class="text-center m-4">eNews letter and Magazine</h2>
+  {% for s,o in eNews_magazine_objects.items %}
+  <h5 class="mb-3">Session : {{s}}</h5>
+  {% for i in o %}
+  <div class="row border-top">
+    <div class="col-8 py-2">
+      <p class="">{{ forloop.counter }}. {{i.title}}</p>
+    </div>
+    <div class="col-4 py-2">
+      <a class="btn btn-primary btn-block" href="{{i.file.url}}" role="button" download>download</a>
+    </div>
+  </div>
+
+  {% endfor %}
+  {% endfor %}
+</div>
+{% endblock content %}
