@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'Students',
     'publication',
     'learning_resources',
+    'product',
 ]
 
 MIDDLEWARE = [
