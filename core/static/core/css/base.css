@@ -1,3 +1,7 @@
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
   .nav-item {
     border-right: 1px solid silver;
     padding-right: 25px;
