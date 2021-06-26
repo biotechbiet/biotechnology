@@ -29,3 +29,7 @@ urlpatterns = [
     path('products/',views.product_views,name='products_url'),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+admin.site.site_header = "Department of BioTech Admin"
+admin.site.site_title = "Department of BioTech Admin Portal"
+admin.site.index_title = "Welcome to Department of Biotechnology"
