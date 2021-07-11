@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '18f#ay6@%pqm9^szw7bli!@68^2u58*#y6kisq+31038+s-hd$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'bietdbt.herokuapp.com',
@@ -51,7 +51,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    # 'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -129,4 +129,11 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-from BioTech.aws.conf import *
+if not DEBUG:
+    from BioTech.aws.conf import *
+else:
+    STATIC_URL = '/static/'
+    MEDIA_URL='/media/'
+    MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+    STATIC_ROOT=BASE_DIR / 'static'
+
