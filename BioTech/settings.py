@@ -130,6 +130,10 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 if True:
+    from storages.backends.s3boto3 import S3Boto3Storage
+
+    StaticRootS3BotoStorage = lambda: S3Boto3Storage(location='static')
+    MediaRootS3BotoStorage  = lambda: S3Boto3Storage(location='media')
     import datetime
     AWS_ACCESS_KEY_ID = "AKIA4YD3LKBZRTM3DVDJ"
     AWS_SECRET_ACCESS_KEY = "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"
