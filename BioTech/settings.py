@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '18f#ay6@%pqm9^szw7bli!@68^2u58*#y6kisq+31038+s-hd$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'bietdbt.herokuapp.com',
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'publication',
     'learning_resources',
     'product',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -124,13 +125,14 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
-MEDIA_URL='/media/'
-MEDIA_ROOT=os.path.join(BASE_DIR,'media')
-X_FRAME_OPTIONS = 'SAMEORIGIN'
-STATIC_ROOT=BASE_DIR / 'static'
-
+if not DEBUG:
+    from BioTech.aws.conf import *
+else:
+    STATIC_URL = '/static/'
+    MEDIA_URL='/media/'
+    MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+    STATIC_ROOT=BASE_DIR / 'static'
