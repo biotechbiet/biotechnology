@@ -130,7 +130,7 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 if not DEBUG:
-    from BioTech.aws.conf import *
+    from .aws.conf import *
 else:
     STATIC_URL = '/static/'
     MEDIA_URL='/media/'
