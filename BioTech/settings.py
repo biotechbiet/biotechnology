@@ -131,9 +131,7 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 if True:
     from storages.backends.s3boto3 import S3Boto3Storage
-
-    StaticRootS3BotoStorage = lambda: S3Boto3Storage(location='static')
-    MediaRootS3BotoStorage  = lambda: S3Boto3Storage(location='media')
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
     import datetime
     AWS_ACCESS_KEY_ID = "AKIA4YD3LKBZRTM3DVDJ"
     AWS_SECRET_ACCESS_KEY = "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"
@@ -141,18 +139,15 @@ if True:
     AWS_PRELOAD_METADATA = True
     AWS_QUERYSTRING_AUTH = True
     AWS_DEFAULT_ACL=None
-    DEFAULT_FILE_STORAGE = 'BioTech.aws.utils.MediaRootS3BotoStorage'
-    STATICFILES_STORAGE = 'BioTech.aws.utils.StaticRootS3BotoStorage'
     AWS_STORAGE_BUCKET_NAME = 'bietbiotechbucket'
     # S3DIRECT_REGION = 'ap-south-1'
     AWS_S3_REGION_NAME='ap-south-1'
     AWS_S3_SIGNATURE_VERSION = "s3v4"
-    S3_URL = '//%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
+    S3_URL = '//%s.s3.amazonaws.com/static/' % AWS_STORAGE_BUCKET_NAME
     MEDIA_URL = '//%s.s3.amazonaws.com/media/' % AWS_STORAGE_BUCKET_NAME
     MEDIA_ROOT = MEDIA_URL
-    STATIC_URL = S3_URL + 'static/'
-    ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
-
+    STATIC_URL = '/static/'
+    STATIC_ROOT=BASE_DIR / 'static'
     # two_months = datetime.timedelta(days=61)
     # date_two_months_later = datetime.date.today() + two_months
     # expires = date_two_months_later.strftime("%A, %d %B %Y 20:00:00 GMT")
