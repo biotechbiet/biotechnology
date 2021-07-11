@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '18f#ay6@%pqm9^szw7bli!@68^2u58*#y6kisq+31038+s-hd$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'bietdbt.herokuapp.com',
@@ -129,7 +129,7 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-if not DEBUG:
+if True:
     import datetime
     AWS_ACCESS_KEY_ID = "AKIA4YD3LKBZRTM3DVDJ"
     AWS_SECRET_ACCESS_KEY = "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"
@@ -157,9 +157,9 @@ if not DEBUG:
     #     'Expires': expires,
     #     'Cache-Control': 'max-age=%d' % (int(two_months.total_seconds()), ),
     # }
-else:
-    STATIC_URL = '/static/'
-    MEDIA_URL='/media/'
-    MEDIA_ROOT=os.path.join(BASE_DIR,'media')
-    STATIC_ROOT=BASE_DIR / 'static'
+# else:
+#     STATIC_URL = '/static/'
+#     MEDIA_URL='/media/'
+#     MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+#     STATIC_ROOT=BASE_DIR / 'static'
 
