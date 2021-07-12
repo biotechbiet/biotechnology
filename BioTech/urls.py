@@ -20,7 +20,7 @@ from django.urls import path, include
 from product import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin-dbt/', admin.site.urls),
     path('', include('core.urls')),
     path('', include('Students.urls')),
     path('', include('staff.urls')),
