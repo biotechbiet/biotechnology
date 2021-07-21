@@ -13,7 +13,7 @@ class topper_list(models.Model):
         ('First Year','First Year'),
         ('Second Year','Second Year'),
         ('Third Year','Third Year'),
-        ('Forth Year','Forth Year'),
+        ('Fourth Year','Fourth Year'),
     )
     stu_rank=CharField(max_length=3,choices=rank_choice,help_text='it is visible on webpage')
     stu_name=CharField(max_length=70,help_text='name can be up to 70 letters')
